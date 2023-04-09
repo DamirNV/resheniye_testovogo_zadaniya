@@ -4,7 +4,7 @@
 Попробуйте запустить приложение локально, при наличии ошибок в запуске – исправьте их и приложите описание своего решения.<br>
 Упакуйте данное приложение в docker. Проверьте, что контейнер запускается локально. Попробуйте запустить данное упакованное приложение через
 docker-compose. Рабочий Dockerfile, docker-compose.yaml и текстовый документ с заметками выложить в свой репозиторий github.<br>
-Полезная ссылка: https://docs.docker.com/<br>
+Полезная ссылка: https://docs.docker.com/
 
 ### Решение
 
@@ -24,17 +24,17 @@ docker-compose. Рабочий Dockerfile, docker-compose.yaml и текстов
 
 `python3 app.py`
 
-#### Описание решения ошибки:<br>
+#### Описание решения ошибки:
 
-При запуске программы терминал выдал ошибку в файле forms.py 'wtforms.validators' не имеет атрибута 'required'<br>
+При запуске программы терминал выдал ошибку в файле forms.py 'wtforms.validators' не имеет атрибута 'required'
 
 1. Исправил:
 
-`validators=[validators.required()` на `validators=[InputRequired()` в строках username и password<br>
+`validators=[validators.required()` на `validators=[InputRequired()` в строках username и password
 
 2. Добавил:
 
-`from wtforms.validators import InputRequired`<br>
+`from wtforms.validators import InputRequired`
 
 #### Команда для сборки docker образа:
 
