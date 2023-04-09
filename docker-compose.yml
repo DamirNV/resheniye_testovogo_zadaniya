@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  web:
+    build: 
+      context: .
+    ports:
+      - "8000:5000"
+    networks:
+      - flask
+      
+networks:
+  flask:
+      
