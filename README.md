@@ -13,11 +13,16 @@ docker-compose. Рабочий Dockerfile, docker-compose.yaml и текстов
 1. Установить виртуальное окружение питона (выполнять в директории программы):
 
 `python3 -m venv .venv`
+
 `source .venv/bin/activate`
 
-2. Установить зависимости: `pip install -r requirements.txt`
+2. Установить зависимости: 
 
-3. Запустить приложение: `python3 app.py`
+`pip install -r requirements.txt`
+
+3. Запустить приложение: 
+
+`python3 app.py`
 
 **Описание решения ошибки:**<br>
 
