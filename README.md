@@ -29,9 +29,11 @@ docker-compose. Рабочий Dockerfile, docker-compose.yaml и текстов
 При запуске программы терминал выдал ошибку в файле forms.py 'wtforms.validators' не имеет атрибута 'required'<br>
 
 1. Исправил:
+
 `validators=[validators.required()` на `validators=[InputRequired()` в строках username и password<br>
 
 2. Добавил:
+
 `from wtforms.validators import InputRequired`<br>
 
 **Команда для сборки docker образа:** 
