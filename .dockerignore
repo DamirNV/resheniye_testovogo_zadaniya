@@ -1,0 +1,5 @@
+.git*
+**/.pytest_cashe/*
+Dockerfile
+docker-compose.yaml
+README.md
