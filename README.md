@@ -17,7 +17,7 @@ docker-compose. Рабочий Dockerfile, docker-compose.yaml и текстов
 
 3. Запустить приложение: `python3 app.py`
 
-**Описание решения ошибки:**
+**Описание решения ошибки:**<br>
 При запуске программы терминал выдал ошибку в файле forms.py 'wtforms.validators' не имеет атрибута 'required'<br>
 Исправил `validators=[validators.required()` на `validators=[InputRequired()` в строках username и password<br>
 Дабавил `from wtforms.validators import InputRequired`<br>
