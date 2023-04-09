@@ -21,8 +21,10 @@ docker-compose. Рабочий Dockerfile, docker-compose.yaml и текстов
 Скопировал приложение в дирректорию resheniye командой cp -R flaskex/* resheniye/.<br>
 Перешел в дирректорию командой cd resheniye<br>
 Удалил лишние файлы git командой rm -rf flaskex/.git*<br>
+
 Создал новый репозиторий на сайте https://github.com/DamirNV/resheniye_testovogo_zadaniya<br>
-Добавил в репозиторий исходную программу командами<br>
+
+Добавил в репозиторий исходную программу командами:<br>
 git init<br>
 git add .<br>
 git commit -m " Исходная программа"<br>
@@ -39,17 +41,20 @@ File "/home/user/Flaskex/scripts/forms.py", line 6, in <module> class LoginForm(
 File "/home/user/Flaskex/scripts/forms.py", line 7, in LoginForm username = StringField('Username:', validators=[validators.required(), validators.Length(min=1, max=30)])<br>
 AttributeError: module 'wtforms.validators' has no attribute 'required'<br>
 Видим, что ошибка в файле forms.py, которая находится в дирректории /home/user/Flaskex/scripts/forms.py<br>
+
 Суть ошибки 'wtforms.validators' не имеет атрибута 'required'<br>
+
 Зашел в дирректорию файла forms.py <br>
 Так как я копировал приложение в новую рабочую папку, то путь к файлу такой /home/user/resheniye/scripts/forms.py<br>
-команда cd resheniye<br>
-команда cd scripts<br>
+Команда cd resheniye<br>
+Команда cd scripts<br>
 Открыл файл forms.py командой nano forms.py<br>
 Исправил validators=[validators.required() на validators=[InputRequired() в строках username и password<br>
-Дабавил в import from wtforms.validators import InputRequired<br>
+Дабавил from wtforms.validators import InputRequired<br>
 Сохранил изменения командой Ctrl+O<br>
 Вышел из файла командой Ctrl+X<br>
 Вышел из дирректории командой cd<br>
+
 Зашел в дирректорию с программой командой cd resheniye<br>
 Запустил приложение командой python3 app.py<br>
 Приложение запустилось<br>
@@ -67,6 +72,7 @@ git push --set-upstream origin develop<br>
 ### Создание docker образа и запуск контейнера
 
 Создал Dockerfile командой nano Dockerfile<br>
+
 Со следующим содержимым:<br>
 FROM python:3.6.15-alpine3.15<br>
 WORKDIR /app<br>
@@ -77,7 +83,9 @@ EXPOSE 5000<br>
 CMD ["python3","app.py"]<br>
 Сохранил изменения командой Ctrl+O<br>
 Вышел из файла командой Ctrl+X<br>
+
 Создал .dockerignore командой nano .dockerignore<br>
+
 Со следующим содержимым:<br>
 .git*<br>
 **/.pytest_cashe/*<br>
@@ -86,6 +94,7 @@ docker-compose.yaml<br>
 README.md<br>
 Сохранил изменения командой Ctrl+O<br>
 Вышел из файла командой Ctrl+X<br>
+
 Создал docker образ командой sudo docker build -t app:obraz .<br>
 Запустил контейнер с образом командой sudo docker run --rm --name -p 5000:5000 flaskex app:obraz<br>
 Проверил, открылось ли приложение в браузере введя в адресную строку localhost:5000<br>
@@ -101,6 +110,7 @@ git push<br>
 ### Создание docker-compose.yml
 
 Создал docker-compose.yml командой nano docker-compose.yml<br>
+
 Со следующим содержимым:<br>
 version: "3"<br>
 services:<br>
@@ -113,6 +123,9 @@ networks:<br>
 - flask<br>
 networks:<br>
 flask:<br>
+Сохранил изменения командой Ctrl+O<br>
+Вышел из файла командой Ctrl+X<br>
+
 Запустил docker-compose командой sudo docker compose up<br>
 Проверил, открылось ли приложение в браузере введя в адресную строку localhost:8000<br>
 Остановил командой Ctrl+C<br>
