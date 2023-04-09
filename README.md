@@ -22,7 +22,7 @@ sudo docker build -t app:obraz .<br>
 ### Команда для запуска контейнера
 sudo docker run --rm --name -p 5000:5000 flaskex app:obraz<br>
 
-###Команда для сборки образа компоузом
+### Команда для сборки образа компоузом
 sudo docker-compose.yml командой nano docker-compose.yml<br>
 
 ### Команда для запуска контейнера компоузом
