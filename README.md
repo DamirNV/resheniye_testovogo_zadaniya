@@ -42,7 +42,7 @@ docker-compose. Рабочий Dockerfile, docker-compose.yaml и текстов
 
 #### Команда для запуска контейнера:
 
-`docker run --rm --name -p 5000:5000 flaskex app:test`
+`sudo docker run --rm -p 5000:5000 --name flaskex app:test`
 
 #### Команда для сборки образа c помощью docker-compose:
 
