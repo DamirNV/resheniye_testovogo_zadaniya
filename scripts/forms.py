@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from wtforms import Form, StringField, validators
-from wtforms.validators import InputRequired, Length
+from wtforms.validators import InputRequired
 
 
 class LoginForm(Form):
