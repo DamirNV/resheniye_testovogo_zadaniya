@@ -118,9 +118,9 @@ web:<br>
 build: <br>
 context: .<br>
 ports:<br>
-- "8000:5000"<br>
+-"8000:5000"<br>
 networks:<br>
-- flask<br>
+-flask<br>
 networks:<br>
 flask:<br>
 Сохранил изменения командой Ctrl+O<br>
