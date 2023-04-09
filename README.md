@@ -8,7 +8,7 @@ docker-compose. Рабочий Dockerfile, docker-compose.yaml и текстов
 
 ### Решение
 
-**Запуск приложения в виртуальном окружении:**
+#### Запуск приложения в виртуальном окружении:
  
 1. Установить виртуальное окружение питона (выполнять в директории программы):
 
@@ -24,7 +24,7 @@ docker-compose. Рабочий Dockerfile, docker-compose.yaml и текстов
 
 `python3 app.py`
 
-**Описание решения ошибки:**<br>
+#### Описание решения ошибки:<br>
 
 При запуске программы терминал выдал ошибку в файле forms.py 'wtforms.validators' не имеет атрибута 'required'<br>
 
@@ -36,18 +36,18 @@ docker-compose. Рабочий Dockerfile, docker-compose.yaml и текстов
 
 `from wtforms.validators import InputRequired`<br>
 
-**Команда для сборки docker образа:** 
+#### Команда для сборки docker образа:
 
 `docker build -t app:test .`
 
-**Команда для запуска контейнера:** 
+#### Команда для запуска контейнера:
 
 `docker run --rm --name -p 5000:5000 flaskex app:test`
 
-**Команда для сборки образа c помощью docker-compose:** 
+#### Команда для сборки образа c помощью docker-compose:
 
 `docker-compose build`
 
-**Команда для запуска контейнера c помощью docker-compose:** 
+#### Команда для запуска контейнера c помощью docker-compose: 
 
 `docker compose up`
