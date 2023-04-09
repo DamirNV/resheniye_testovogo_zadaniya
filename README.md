@@ -9,23 +9,23 @@ docker-compose. Рабочий Dockerfile, docker-compose.yaml и текстов
 git clone https://github.com/anfederico/Flaskex<br>
 cd Flaskex<br>
 requirements.txt командой pip install -r requirements.txt<br>
-python app.py<br>
+python3 app.py<br>
 
 ### Описание решения ошибки
 При запуске программы терминал выдал ошибку в файле forms.py 'wtforms.validators' не имеет атрибута 'required'<br>
 Исправил validators=[validators.required() на validators=[InputRequired() в строках username и password<br>
 Дабавил from wtforms.validators import InputRequired<br>
 
-### Команда для сборки докер образа
+### Команда для сборки docker образа
 sudo docker build -t app:obraz .<br>
 
 ### Команда для запуска контейнера
 sudo docker run --rm --name -p 5000:5000 flaskex app:obraz<br>
 
-### Команда для сборки образа компоузом
+### Команда для сборки образа c помощью docker-compose
 sudo docker-compose.yml командой nano docker-compose.yml<br>
 
-### Команда для запуска контейнера компоузом
+### Команда для запуска контейнера c помощью docker-compose
 sudo docker compose up<br>
 
 <p align="center"><img src="https://raw.githubusercontent.com/anfederico/Flaskex/master/media/flaskex-logo.png" width="128px"><p>
